@@ -1,0 +1,11 @@
+transformers
+torch
+accelerate
+flask
+flask_cors
+opencv-python
+einops
+diffusers==0.21.1
+omegaconf
+scipy
+huggingface_hub==0.24.5
