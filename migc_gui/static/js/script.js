@@ -300,10 +300,15 @@ function generateImage() {
       },
       body: JSON.stringify({prompt}),
     })
-    .then(response => response.blob())
+    .then(response => {
+      console.log('Response:', response);
+      return response.blob();
+    })
     .then(blob => {
+      console.log('Blob received:', blob);
       var img = new Image()
       img.onload = function() {
+        console.log('Image loaded successfully:', img.src);
         let canvas = document.getElementById("canvas_image")
         let ctx = canvas.getContext("2d")
         ctx.drawImage(img, 0, 0)
